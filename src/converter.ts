@@ -1392,7 +1392,7 @@ export function generateUri(node: any): string {
   switch (node.type) {
     case "ss":
       const cipher = node.cipher || "auto";
-      const pass = encodeURIComponent(node.password || "");
+      const pass = node.password || "";
       const auth = btoa(`${cipher}:${pass}`);
       return `ss://${auth}@${server}:${port}#${name}`;
 
